@@ -103,7 +103,6 @@ body {
   filter: FlipH;
   z-index: 9;
 }
-
 .learning-option-card{
   @apply flex flex-col flex-wrap p-6 justify-between items-center rounded-xl w-[400px] h-[500px]  bg-slateGreen text-white
 }
