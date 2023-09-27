@@ -5,12 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  background-color: black;
-  color:white;
-}
 
 body {
+  background-color: black;
+  color:white;
   @apply h-screen;
 }
 * {
@@ -85,4 +83,23 @@ body {
 ::before,
 ::after {
   border-width: 0;
+}
+
+#webcam {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  filter: FlipH;
+}
+
+#gesture-canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  filter: FlipH;
+  z-index: 9;
 }
