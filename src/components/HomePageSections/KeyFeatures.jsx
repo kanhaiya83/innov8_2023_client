@@ -28,14 +28,12 @@ const KeyFeatures = () => {
           Why Choose Gesture?
         </p>
 
-        <div className=" text-md flex flex-col justify-center items-center gap-6 p-4  scale-75 md:scale-100 ">
+        <div className=" px-10 text-md flex flex-col lg:flex-row first-letter:justify-center items-center gap-6 p-4  scale-75 md:scale-100 ">
           {features.map((item) => {
             return (
-              <div className="flex  items-center justify-center">
-                <div className="icon border-2 border-white h-[100px] w-[100px] rounded-full -mr-10 z-10 flex justify-center items-center">
+              <div className="flex items-center justify-center ">
+                <div className="rounded-xl border-2 border-white p-6 justify-center items-center flex flex-col gap-3 text-center">
                   <p>Icon</p>
-                </div>
-                <div className="rounded-full border-2 border-white p-6 justify-center items-center flex flex-col gap-3  ">
                   <div className="font-bold">{item.featureHeading}</div>
                   <div className="font-base">{item.featureContent}</div>
                 </div>

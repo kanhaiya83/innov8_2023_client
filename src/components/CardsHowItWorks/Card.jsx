@@ -18,7 +18,7 @@ const card = (item) => {
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
       key={item.step}
-      className="flex items-center gap-12 rounded-3xl sticky flex-col md:flex-row shadow-xl  top-[25vh] w-[400px] sm:w-[600px] lg:w-[900px] overflow-hidden p-4 md:py-12 scale:75 sm:scale-90 md:scale:100  "
+      className="bg-black flex items-center gap-12 rounded-3xl sticky flex-col md:flex-row shadow-xl  top-[25vh] w-[400px] sm:w-[600px] lg:w-[900px] overflow-hidden p-4 md:py-12 scale:75 sm:scale-90 md:scale:100  "
     >
       <div className=" bg-transparent  md:items-start md:justify-start flex flex-col gap-4 text-left w-full md:w-[40%] ">
         <div className=" text-2xl  lg:text-3xl font-bold">Step {item.step}</div>
