@@ -6,33 +6,22 @@ import Handsigns from "./handsigns";
 // import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import { useEffect, useRef, useState } from "react";
-import useSound from 'use-sound'
-import bellSound from './../assets/sounds/bell.wav' // Your sound file path here
-const GestureTrackerWebcam = ({data
-}) => {
-  const {
-  onLoad,
-  currentSign,
-  onSuccess,} = data
+import useSound from "use-sound";
+import bellSound from "./../assets/sounds/bell.wav"; // Your sound file path here
+const GestureTrackerWebcam = ({ data }) => {
+  const { signList, onLoad, onSuccess } = data;
+  console.log(signList);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-  const [loader, setLoader] = useState(true);
-  const [camState, setCamState] = useState("on");
 
-  const [sign, setSign] = useState(null);
-  const [playSound] = useSound(bellSound)
-
-  // let signList = []
-  // let currentSign = 0
-
+  const [playSound] = useSound(bellSound);
+  let currentSign = 0
   let gamestate = "started";
 
   // let net;
-
   async function runHandpose() {
     const net = await handpose.load();
     onLoad();
-    //   _signList()
     setInterval(() => {
       detect(net);
     }, 150);
@@ -44,7 +33,6 @@ const GestureTrackerWebcam = ({data
       webcamRef.current !== null &&
       webcamRef.current.video.readyState === 4
     ) {
-      console.log("object");
       // Get Video Properties
       const video = webcamRef.current.video;
       const videoWidth = webcamRef.current.video.videoWidth;
@@ -104,9 +92,15 @@ const GestureTrackerWebcam = ({data
           const maxConfidence = confidence.indexOf(
             Math.max.apply(undefined, confidence)
           );
+          console.log(
+            Math.max.apply(undefined, confidence),
+            estimatedGestures.gestures[maxConfidence].name,
+            signList[currentSign].alt
+          );
 
-          if (currentSign == estimatedGestures.gestures[maxConfidence].name) {
-            onSuccess()
+          if (signList[currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
+            currentSign++
+            onSuccess(signList[currentSign].src);
             // playSound()
           }
         }
@@ -120,10 +114,9 @@ const GestureTrackerWebcam = ({data
   useEffect(() => {
     runHandpose();
   }, []);
-
   return (
     <div className="absolute top-0 left-0 w-full h-full object-center object-cover">
-      <Webcam id="webcam" ref={webcamRef} audio={false}/>
+      <Webcam id="webcam" ref={webcamRef} audio={false} />
       <canvas id="gesture-canvas" ref={canvasRef} style={{}} />
     </div>
   );

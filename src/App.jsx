@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUp";
 import Alphabets from "./pages/Alphabets";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import QuizPage from "./pages/Quiz";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/learn/alphabets" element={<Alphabets />} />
             <Route path="/learn/numbers" element={<Learn />} />
             <Route path="/learn/phrases" element={<Learn />} />
+            <Route path="/learn/quiz" element={<QuizPage />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signin" element={<SignIn />} />
