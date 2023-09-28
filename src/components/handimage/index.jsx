@@ -62,6 +62,7 @@ import hand_6 from "./6.png"
 import hand_7 from "./7.png"
 import hand_8 from "./8.png"
 import hand_9 from "./9.png"
+import ily from "./ily.png"
 
 export const Signimage = {
   A: A_sign,
@@ -238,5 +239,11 @@ export const NumberPass = [
   {
    src: hand_9,
    alt:"9"
+  }
+]
+export const PhrasesPass = [
+  {
+    src:ily,
+    alt:"I Love You"
   }
 ]

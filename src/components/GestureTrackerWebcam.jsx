@@ -44,8 +44,11 @@ const numberSigns= [
   Handsigns.sign_3,
   Handsigns.sign_4,
 ]
+const phrasesSigns = [
+  Handsigns.phrase_ily
+]
 const GestureTrackerWebcam = ({ data }) => {
-  const { signList, onLoad, onSuccess, isNumber } = data;
+  const { signList, onLoad, onSuccess, isNumber, isPhrase } = data;
   console.log(signList);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -87,7 +90,7 @@ const GestureTrackerWebcam = ({ data }) => {
       const hand = await net.estimateHands(video);
       if (hand.length > 0) {
         //loading the fingerpose model
-        const GE = new fp.GestureEstimator(isNumber ?numberSigns :letterSigns);
+        const GE = new fp.GestureEstimator(isNumber ?numberSigns :(isPhrase ?phrasesSigns :letterSigns));
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5);
 
