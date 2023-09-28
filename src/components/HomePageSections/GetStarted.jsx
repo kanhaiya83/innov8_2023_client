@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation, useInView } from "framer-motion";
 const GetStarted = () => {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const inView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const fadeInEffect = {
+    visible: { opacity: 1, y: 0, transition: { delay: 0.75, duration: 0.5 } },
+    hidden: { opacity: 0, y: 75 },
+  };
+
   return (
-    <div className="w-full  h-[150vh] text-white  flex items-center justify-center">
+    <motion.div
+      ref={ref}
+      variants={fadeInEffect}
+      initial="hidden"
+      animate={controls}
+      className="w-full  h-[100vh] text-white  flex items-center justify-center"
+    >
       <div className="sticky top-[10vh] flex flex-col gap-14 ">
         <p className="text-center text-4xl md:text-5xl lg:text-8xl font-bold">
           Get Started Today
@@ -28,7 +49,7 @@ const GetStarted = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

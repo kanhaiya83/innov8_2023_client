@@ -117,3 +117,6 @@ body {
 .learn-card-button{
   @apply rounded-xl w-full flex items-center justify-center border-2 border-white bg-white text-black transition hover:ease-in-out hover:bg-black hover:text-white hover:border-black p-2 hover:scale-105 hover:shadow-xl
 }
+input{
+  background-color: black;
+}
