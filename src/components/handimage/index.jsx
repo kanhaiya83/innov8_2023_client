@@ -52,6 +52,17 @@ import X_hand from "./Xhand.svg"
 import Y_hand from "./Yhand.svg"
 import Z_hand from "./Zhand.svg"
 
+import hand_0 from "./0.png"
+import hand_1 from "./1.png"
+import hand_2 from "./2.png"
+import hand_3 from "./3.png"
+import hand_4 from "./4.png"
+import hand_5 from "./5.png"
+import hand_6 from "./6.png"
+import hand_7 from "./7.png"
+import hand_8 from "./8.png"
+import hand_9 from "./9.png"
+
 export const Signimage = {
   A: A_sign,
   B: B_sign,
@@ -98,10 +109,10 @@ export const Signpass = [
   //   src: D_hand,
   //   alt: "D",
   // },
-  {
-    src: E_hand,
-    alt: "E",
-  },
+  // {
+  //   src: E_hand,
+  //   alt: "E",
+  // },
   {
     src: F_hand,
     alt: "F",
@@ -142,10 +153,10 @@ export const Signpass = [
     src: O_hand,
     alt: "O",
   },
-  {
-    src: P_hand,
-    alt: "P",
-  },
+  // {
+  //   src: P_hand,
+  //   alt: "P",
+  // },
   // {
   //   src: Q_hand,
   //   alt: "Q",
@@ -186,4 +197,46 @@ export const Signpass = [
   //   src: Z_hand,
   //   alt: "Z",
   // },
+]
+export const NumberPass = [
+  // {
+  //  src: hand_0,
+  //  alt:"0"
+  // },
+  {
+   src: hand_1,
+   alt:"1"
+  },
+  {
+   src: hand_2,
+   alt:"2"
+  },
+  {
+   src: hand_3,
+   alt:"3"
+  },
+  {
+   src: hand_4,
+   alt:"4"
+  },
+  {
+   src: hand_5,
+   alt:"5"
+  },
+  {
+   src: hand_6,
+   alt:"6"
+  },
+  {
+   src: hand_7,
+   alt:"7"
+  },
+  {
+   src: hand_8,
+   alt:"8"
+  },
+  {
+   src: hand_9,
+   alt:"9"
+  }
 ]

@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
 import GestureTrackerWebcam from "../components/GestureTrackerWebcam";
-import { Signpass } from "../components/handimage";
+import { NumberPass } from "../components/handimage";
 import { successToast } from "../utils";
 import Loader from "../components/Loader";
 import { useNavigate } from "react-router-dom";
-const getRandomSign=()=>{
-    return  Signpass[Math.round(Math.random()*(Signpass.length-1))]
-}
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -15,12 +12,14 @@ function shuffle(a) {
   }
   return a
 }
-const Alphabets = () => {
-    const [showLoader,setLoader] = useState(true)
-    const shuffledList = shuffle(Signpass)
+const NumbersPage = () => {
+    // const [showLoader,setLoader] = useState(true)
+    const shuffledList = shuffle(NumberPass)
+    console.log(shuffledList[0].alt);
     const navigate= useNavigate()
     const handleSuccess=(data)=>{
         document.querySelector(".img-container img").setAttribute("src",data.src)
+        document.querySelector(".img-container span").textContent = data.alt
         successToast("Yay! You guessed it right!!")
     }
     const handleLoad = ()=>{
@@ -31,7 +30,6 @@ const Alphabets = () => {
       navigate("/learn")
     }
     const handleSkip = ()=>{
-      const newSign =getRandomSign()
       // signRef.current =newSign.alt
         // document.querySelector(".img-container img").setAttribute("src",newSign.src)
     }
@@ -44,6 +42,7 @@ const Alphabets = () => {
         <div className="relative pt-[66%] rounded-2xl overflow-hidden">
           <GestureTrackerWebcam
             data={{
+              isNumber:true,
               signList:shuffledList,
               onSuccess: 
                 handleSuccess,
@@ -58,6 +57,7 @@ const Alphabets = () => {
             <h1 className="text-2xl font-semibold mb-8 text-center mb-10">Form this gesture.</h1>
             <div className="img-container w-[70%] mx-auto mb-10">
                 <img src={shuffledList[0].src} alt="" className="w-full" />
+                <span className="text-2xl font-bold text-center">{shuffledList[0].alt}</span>
             </div>
             <div className="flex justify-around  items-center w-full">
               <button className="bg-bgColor py-2 px-4 rounded-md" onClick={handleSkip}>Skip</button>
@@ -70,4 +70,4 @@ const Alphabets = () => {
   );
 };
 
-export default Alphabets;
+export default NumbersPage;

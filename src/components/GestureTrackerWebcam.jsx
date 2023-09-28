@@ -8,8 +8,44 @@ import "@tensorflow/tfjs-backend-webgl";
 import { useEffect, useRef, useState } from "react";
 import useSound from "use-sound";
 import bellSound from "/bell.mp3"; // Your sound file path here
+const letterSigns = [
+  fp.Gestures.ThumbsUpGesture,
+          Handsigns.aSign,
+          Handsigns.bSign,
+          Handsigns.cSign,
+          Handsigns.dSign,
+          Handsigns.eSign,
+          Handsigns.fSign,
+          Handsigns.gSign,
+          Handsigns.hSign,
+          Handsigns.iSign,
+          Handsigns.jSign,
+          Handsigns.kSign,
+          Handsigns.lSign,
+          Handsigns.mSign,
+          Handsigns.nSign,
+          Handsigns.oSign,
+          Handsigns.pSign,
+          Handsigns.qSign,
+          Handsigns.rSign,
+          Handsigns.sSign,
+          Handsigns.tSign,
+          Handsigns.uSign,
+          Handsigns.vSign,
+          Handsigns.wSign,
+          Handsigns.xSign,
+          Handsigns.ySign,
+          Handsigns.zSign,
+]
+const numberSigns= [
+  Handsigns.sign_0  ,
+  Handsigns.sign_1,
+  Handsigns.sign_2,
+  Handsigns.sign_3,
+  Handsigns.sign_4,
+]
 const GestureTrackerWebcam = ({ data }) => {
-  const { signList, onLoad, onSuccess } = data;
+  const { signList, onLoad, onSuccess, isNumber } = data;
   console.log(signList);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -51,35 +87,7 @@ const GestureTrackerWebcam = ({ data }) => {
       const hand = await net.estimateHands(video);
       if (hand.length > 0) {
         //loading the fingerpose model
-        const GE = new fp.GestureEstimator([
-          fp.Gestures.ThumbsUpGesture,
-          Handsigns.aSign,
-          Handsigns.bSign,
-          Handsigns.cSign,
-          Handsigns.dSign,
-          Handsigns.eSign,
-          Handsigns.fSign,
-          Handsigns.gSign,
-          Handsigns.hSign,
-          Handsigns.iSign,
-          Handsigns.jSign,
-          Handsigns.kSign,
-          Handsigns.lSign,
-          Handsigns.mSign,
-          Handsigns.nSign,
-          Handsigns.oSign,
-          Handsigns.pSign,
-          Handsigns.qSign,
-          Handsigns.rSign,
-          Handsigns.sSign,
-          Handsigns.tSign,
-          Handsigns.uSign,
-          Handsigns.vSign,
-          Handsigns.wSign,
-          Handsigns.xSign,
-          Handsigns.ySign,
-          Handsigns.zSign,
-        ]);
+        const GE = new fp.GestureEstimator(isNumber ?numberSigns :letterSigns);
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5);
 
@@ -96,12 +104,13 @@ const GestureTrackerWebcam = ({ data }) => {
           console.log(
             Math.max.apply(undefined, confidence),
             estimatedGestures.gestures[maxConfidence].name,
+            estimatedGestures.gestures.sort((a,b)=>{return b.confidence - a.confidence}).map(t=>`${t.name}_${Math.round(t.confidence)}`).slice(0,3),
             signList[currentSign].alt
           );
 
           if (signList[currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
             bellAudio.play()
-            currentSign++
+            currentSign =( currentSign+1) % signList.length 
             onSuccess(signList[currentSign]);
             // playSound() 
           }
