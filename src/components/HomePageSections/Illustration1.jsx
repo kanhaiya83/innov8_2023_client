@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import image from "../../assets/image.jpeg";
 
 const Illustration1 = () => {
   const fadeInEffect = {
@@ -20,12 +21,13 @@ const Illustration1 = () => {
           <span>Through Sign Language</span>
         </motion.div>
         {/* Video/ illlustration */}
-        <video width="100%" autoPlay>
+        {/* <video width="100%" autoPlay>
           <source
             src="https://dl.dropboxusercontent.com/s/frmnn8rvk6p5rjw/Motion_page.mp4?dl=0"
             type="video/mp4"
           />
-        </video>{" "}
+        </video>{" "} */}
+        <img src={image} className="w-[60%] rounded-3xl" />
       </div>
     </div>
   );

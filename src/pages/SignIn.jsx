@@ -15,7 +15,7 @@ const SignIn = () => {
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
               alt="logo"
             /> */}
-            Gestures
+            Cosign
           </a>
           <div className="w-full bg-black rounded-xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
