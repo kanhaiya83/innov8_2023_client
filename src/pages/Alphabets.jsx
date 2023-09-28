@@ -19,9 +19,9 @@ const Alphabets = () => {
     const [showLoader,setLoader] = useState(true)
     const shuffledList = shuffle(Signpass)
     const navigate= useNavigate()
-    const handleSuccess=(src)=>{
-        document.querySelector(".img-container img").setAttribute("src",src)
-        successToast("Yay! You guess it right!!")
+    const handleSuccess=(data)=>{
+        document.querySelector(".img-container img").setAttribute("src",data.src)
+        successToast("Yay! You guessed it right!!")
     }
     const handleLoad = ()=>{
       setLoader(false)

@@ -100,7 +100,7 @@ const GestureTrackerWebcam = ({ data }) => {
 
           if (signList[currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
             currentSign++
-            onSuccess(signList[currentSign].src);
+            onSuccess(signList[currentSign]);
             // playSound()
           }
         }
