@@ -63,7 +63,7 @@ export const drawHand = (prediction, ctx) => {
 export const successToast=(msg)=>{
     toast.success(msg, {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
