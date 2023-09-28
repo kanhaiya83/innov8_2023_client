@@ -158,26 +158,26 @@ export const Signpass = [
     src: S_hand,
     alt: "S",
   },
-  {
-    src: T_hand,
-    alt: "T",
-  },
+  // {
+  //   src: T_hand,
+  //   alt: "T",
+  // },
   {
     src: U_hand,
     alt: "U",
   },
-  {
-    src: V_hand,
-    alt: "V",
-  },
-  {
-    src: W_hand,
-    alt: "W",
-  },
-  {
-    src: X_hand,
-    alt: "X",
-  },
+  // {
+  //   src: V_hand,
+  //   alt: "V",
+  // },
+  // {
+  //   src: W_hand,
+  //   alt: "W",
+  // },
+  // {
+  //   src: X_hand,
+  //   alt: "X",
+  // },
   {
     src: Y_hand,
     alt: "Y",
