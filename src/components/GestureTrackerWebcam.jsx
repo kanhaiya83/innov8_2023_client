@@ -52,7 +52,7 @@ const GestureTrackerWebcam = ({ data }) => {
 
   const [playSound] = useSound(bellSound);
   const bellAudio = new Audio("/bell.mp3")
-  let currentSign = 0
+   window.currentSign = 0
   let gamestate = "started";
 
   // let net;
@@ -105,13 +105,13 @@ const GestureTrackerWebcam = ({ data }) => {
             Math.max.apply(undefined, confidence),
             estimatedGestures.gestures[maxConfidence].name,
             estimatedGestures.gestures.sort((a,b)=>{return b.confidence - a.confidence}).map(t=>`${t.name}_${Math.round(t.confidence)}`).slice(0,3),
-            signList[currentSign].alt
+            signList[window.currentSign].alt
           );
 
-          if (signList[currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
+          if (signList[window.currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
             bellAudio.play()
-            currentSign =( currentSign+1) % signList.length 
-            onSuccess(signList[currentSign]);
+            window.currentSign =( window.currentSign+1) % signList.length 
+            onSuccess(signList[window.currentSign]);
             // playSound() 
           }
         }

@@ -31,9 +31,9 @@ const Alphabets = () => {
       navigate("/learn")
     }
     const handleSkip = ()=>{
-      const newSign =getRandomSign()
-      // signRef.current =newSign.alt
-        // document.querySelector(".img-container img").setAttribute("src",newSign.src)
+      window.currentSign+=1
+
+      document.querySelector(".img-container img").setAttribute("src",shuffledList[window.currentSign].src)
     }
   return (
     <div className="w-full min-h-screen px-[10%] pt-12">
