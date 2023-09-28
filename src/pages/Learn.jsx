@@ -88,7 +88,7 @@ const Learn = () => {
           <div className="w-full bg-transparent h-[20%] text-2xl pl-2 font-bold">
             Quizzz
           </div>{" "}
-          <Link className="learn-card-button " to="/">
+          <Link className="learn-card-button " to="/learn/quiz">
             <button className="">Start Now!</button>
           </Link>
         </motion.div>
