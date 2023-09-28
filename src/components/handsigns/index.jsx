@@ -35,6 +35,7 @@ import {sign_7} from './7sign';
 import {sign_8} from './8sign';
 import {sign_9} from './9sign';
 import {phrase_ily} from './0phrase_ily';
+import {phrase_yes} from './0phrase_yes';
 
 
 
@@ -75,7 +76,8 @@ const Handsigns = {
     sign_7,
     sign_8,
     sign_9,
-    phrase_ily
+    phrase_ily,
+    phrase_yes
 }
 
 

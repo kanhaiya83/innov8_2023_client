@@ -45,7 +45,8 @@ const numberSigns= [
   Handsigns.sign_4,
 ]
 const phrasesSigns = [
-  Handsigns.phrase_ily
+  Handsigns.phrase_ily,
+  Handsigns.phrase_yes,
 ]
 const GestureTrackerWebcam = ({ data }) => {
   const { signList, onLoad, onSuccess, isNumber, isPhrase } = data;

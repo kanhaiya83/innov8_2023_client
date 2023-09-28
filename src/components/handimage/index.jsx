@@ -63,6 +63,7 @@ import hand_7 from "./7.png"
 import hand_8 from "./8.png"
 import hand_9 from "./9.png"
 import ily from "./ily.png"
+import yes from "./yes.jpg"
 
 export const Signimage = {
   A: A_sign,
@@ -118,10 +119,10 @@ export const Signpass = [
     src: F_hand,
     alt: "F",
   },
-  {
-    src: G_hand,
-    alt: "G",
-  },
+  // {
+  //   src: G_hand,
+  //   alt: "G",
+  // },
   {
     src: H_hand,
     alt: "H",
@@ -245,5 +246,9 @@ export const PhrasesPass = [
   {
     src:ily,
     alt:"I Love You"
-  }
+  },
+  {
+    src:yes,
+    alt:"Yes"
+  },
 ]
