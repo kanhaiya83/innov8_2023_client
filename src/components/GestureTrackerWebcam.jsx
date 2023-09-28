@@ -6,7 +6,8 @@ import Handsigns from "./handsigns";
 // import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import { useEffect, useRef, useState } from "react";
-
+import useSound from 'use-sound'
+import bellSound from './../assets/sounds/bell.wav' // Your sound file path here
 const GestureTrackerWebcam = ({data
 }) => {
   const {
@@ -19,6 +20,7 @@ const GestureTrackerWebcam = ({data
   const [camState, setCamState] = useState("on");
 
   const [sign, setSign] = useState(null);
+  const [playSound] = useSound(bellSound)
 
   // let signList = []
   // let currentSign = 0
@@ -31,7 +33,6 @@ const GestureTrackerWebcam = ({data
     const net = await handpose.load();
     onLoad();
     //   _signList()
-console.log(webcamRef.current);
     setInterval(() => {
       detect(net);
     }, 150);
@@ -104,8 +105,9 @@ console.log(webcamRef.current);
             Math.max.apply(undefined, confidence)
           );
 
-          if (currentSign === estimatedGestures.gestures[maxConfidence].name) {
-              onSuccess()
+          if (currentSign == estimatedGestures.gestures[maxConfidence].name) {
+            onSuccess()
+            // playSound()
           }
         }
       }

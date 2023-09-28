@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 //finger points
 const fingerJoints = {
     thumb:[0,1,2,3,4],
@@ -56,4 +58,17 @@ export const drawHand = (prediction, ctx) => {
             }
         })
     }
+}
+
+export const successToast=(msg)=>{
+    toast.success(msg, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
 }

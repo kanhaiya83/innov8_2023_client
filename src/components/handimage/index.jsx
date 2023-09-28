@@ -90,14 +90,14 @@ export const Signpass = [
     src: B_hand,
     alt: "B",
   },
-  {
-    src: C_hand,
-    alt: "C",
-  },
-  {
-    src: D_hand,
-    alt: "D",
-  },
+  // {
+  //   src: C_hand,
+  //   alt: "C",
+  // },
+  // {
+  //   src: D_hand,
+  //   alt: "D",
+  // },
   {
     src: E_hand,
     alt: "E",
@@ -122,18 +122,18 @@ export const Signpass = [
     src: J_hand,
     alt: "J",
   },
-  {
-    src: K_hand,
-    alt: "K",
-  },
+  // {
+  //   src: K_hand,
+  //   alt: "K",
+  // },
   {
     src: L_hand,
     alt: "L",
   },
-  {
-    src: M_hand,
-    alt: "M",
-  },
+  // {
+  //   src: M_hand,
+  //   alt: "M",
+  // },
   {
     src: N_hand,
     alt: "N",
@@ -146,10 +146,10 @@ export const Signpass = [
     src: P_hand,
     alt: "P",
   },
-  {
-    src: Q_hand,
-    alt: "Q",
-  },
+  // {
+  //   src: Q_hand,
+  //   alt: "Q",
+  // },
   {
     src: R_hand,
     alt: "R",
@@ -182,8 +182,8 @@ export const Signpass = [
     src: Y_hand,
     alt: "Y",
   },
-  {
-    src: Z_hand,
-    alt: "Z",
-  },
+  // {
+  //   src: Z_hand,
+  //   alt: "Z",
+  // },
 ]
