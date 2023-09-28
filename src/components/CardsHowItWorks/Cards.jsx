@@ -39,21 +39,21 @@ const Cards = () => {
       content:
         "Cosign utilizes your device's camera to capture sign language gestures.",
       imgUrl:
-        "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+        "https://img.freepik.com/free-vector/huge-camera-tiny-people-taking-pictures-photographer-with-camera-photos-landscapes-flat-vector-illustration-photography-occupation-concept-banner-website-design-landing-web-page_74855-23089.jpg",
     },
     {
       step: "2 : Recognition",
       content:
         "Our powerful algorithms analyze the captured gestures in real-time, converting them into meaningful expressions.",
       imgUrl:
-        "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+        "https://media.istockphoto.com/id/1134031844/vector/gesture-recognition-concept-vector-illustration.jpg?s=170667a&w=0&k=20&c=1ohkwzztpMVuEAcwAiRDOiU-26khntT-dfcoA6Kf_fg=",
     },
     {
       step: "3 : Feedback and Learning",
       content:
         "Users receive instant feedback, allowing them to refine their signing skills. Cosign also provides a range of learning resources to enhance proficiency.",
       imgUrl:
-        "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+        "https://img.freepik.com/free-vector/organic-flat-feedback-concept_23-2148961193.jpg?size=626&ext=jpg&ga=GA1.1.403761969.1695825916&semt=ais",
     },
   ];
 

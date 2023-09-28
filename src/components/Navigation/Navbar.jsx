@@ -13,7 +13,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center justify-center text-3xl font-extrabold"
         >
-          Gestures
+          Cosign
         </Link>
         {/* PLayground Learn options */}
         <div className="flex gap-2 rounded-full p-2 px-4">
