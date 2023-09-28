@@ -10,53 +10,50 @@ import useSound from "use-sound";
 import bellSound from "/bell.mp3"; // Your sound file path here
 const letterSigns = [
   fp.Gestures.ThumbsUpGesture,
-          Handsigns.aSign,
-          Handsigns.bSign,
-          Handsigns.cSign,
-          Handsigns.dSign,
-          Handsigns.eSign,
-          Handsigns.fSign,
-          Handsigns.gSign,
-          Handsigns.hSign,
-          Handsigns.iSign,
-          Handsigns.jSign,
-          Handsigns.kSign,
-          Handsigns.lSign,
-          Handsigns.mSign,
-          Handsigns.nSign,
-          Handsigns.oSign,
-          Handsigns.pSign,
-          Handsigns.qSign,
-          Handsigns.rSign,
-          Handsigns.sSign,
-          Handsigns.tSign,
-          Handsigns.uSign,
-          Handsigns.vSign,
-          Handsigns.wSign,
-          Handsigns.xSign,
-          Handsigns.ySign,
-          Handsigns.zSign,
-]
-const numberSigns= [
-  Handsigns.sign_0  ,
+  Handsigns.aSign,
+  Handsigns.bSign,
+  Handsigns.cSign,
+  Handsigns.dSign,
+  Handsigns.eSign,
+  Handsigns.fSign,
+  Handsigns.gSign,
+  Handsigns.hSign,
+  Handsigns.iSign,
+  Handsigns.jSign,
+  Handsigns.kSign,
+  Handsigns.lSign,
+  Handsigns.mSign,
+  Handsigns.nSign,
+  Handsigns.oSign,
+  Handsigns.pSign,
+  Handsigns.qSign,
+  Handsigns.rSign,
+  Handsigns.sSign,
+  Handsigns.tSign,
+  Handsigns.uSign,
+  Handsigns.vSign,
+  Handsigns.wSign,
+  Handsigns.xSign,
+  Handsigns.ySign,
+  Handsigns.zSign,
+];
+const numberSigns = [
+  Handsigns.sign_0,
   Handsigns.sign_1,
   Handsigns.sign_2,
   Handsigns.sign_3,
   Handsigns.sign_4,
-]
-const phrasesSigns = [
-  Handsigns.phrase_ily,
-  Handsigns.phrase_yes,
-]
+];
+const phrasesSigns = [Handsigns.phrase_ily, Handsigns.phrase_yes];
 const GestureTrackerWebcam = ({ data }) => {
-  const { signList, onLoad, onSuccess, isNumber, isPhrase } = data;
+  const { signList, onLoad, onSuccess, isNumber, isPhrase, onDetection } = data;
   console.log(signList);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
   const [playSound] = useSound(bellSound);
-  const bellAudio = new Audio("/bell.mp3")
-   window.currentSign = 0
+  const bellAudio = new Audio("/bell.mp3");
+  window.currentSign = 0;
   let gamestate = "started";
 
   // let net;
@@ -91,7 +88,9 @@ const GestureTrackerWebcam = ({ data }) => {
       const hand = await net.estimateHands(video);
       if (hand.length > 0) {
         //loading the fingerpose model
-        const GE = new fp.GestureEstimator(isNumber ?numberSigns :(isPhrase ?phrasesSigns :letterSigns));
+        const GE = new fp.GestureEstimator(
+          isNumber ? numberSigns : isPhrase ? phrasesSigns : letterSigns
+        );
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5);
 
@@ -108,15 +107,25 @@ const GestureTrackerWebcam = ({ data }) => {
           console.log(
             Math.max.apply(undefined, confidence),
             estimatedGestures.gestures[maxConfidence].name,
-            estimatedGestures.gestures.sort((a,b)=>{return b.confidence - a.confidence}).map(t=>`${t.name}_${Math.round(t.confidence)}`).slice(0,3),
+            estimatedGestures.gestures
+              .sort((a, b) => {
+                return b.confidence - a.confidence;
+              })
+              .map((t) => `${t.name}_${Math.round(t.confidence)}`)
+              .slice(0, 3),
             signList[window.currentSign].alt
           );
-
-          if (signList[window.currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
-            bellAudio.play()
-            window.currentSign =( window.currentSign+1) % signList.length 
+          if (onDetection && Math.max.apply(undefined, confidence) > 6.5) {
+            onDetection(estimatedGestures.gestures[maxConfidence].name)
+          }
+          if (
+            signList[window.currentSign].alt ==
+            estimatedGestures.gestures[maxConfidence].name
+          ) {
+            bellAudio.play();
+            window.currentSign = (window.currentSign + 1) % signList.length;
             onSuccess(signList[window.currentSign]);
-            // playSound() 
+            // playSound()
           }
         }
       }

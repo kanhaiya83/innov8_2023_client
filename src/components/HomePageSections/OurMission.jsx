@@ -22,7 +22,7 @@ const OurMission = () => {
       variants={fadeInEffect}
       initial="hidden"
       animate={controls}
-      className=" h-[150vh]  text-white  flex items-center justify-center"
+      className=" h-[100vh]  text-white  flex items-center justify-center"
     >
       <div className=" text-left flex flex-col  justify-center items-center gap-10 ">
         <p className=" text-center text-5xl md:text-6xl lg:text-8xl font-bold">

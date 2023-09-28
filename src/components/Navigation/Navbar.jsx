@@ -17,16 +17,17 @@ const Navbar = () => {
         </Link>
         {/* PLayground Learn options */}
         <div className="flex gap-2 rounded-full p-2 px-4">
-          <Link to="/playground" className="navbar-item ">
-            Playground{" "}
-          </Link>
+          
           <Link to="/learn" className="navbar-item ">
             Learn
+          </Link>
+          <Link to="/playground" className="navbar-item ">
+            Playground{" "}
           </Link>
         </div>
         {/* ProLinke / Sign in option */}
         {/* Logic for showing whether to show profile image or sign in Image */}
-        <Link to="/signin">
+        {/* <Link to="/signin">
           <button
             className={` ${
               location.pathname.includes("signin") ||
@@ -44,7 +45,7 @@ const Navbar = () => {
             {" "}
             Profile
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -9,13 +9,13 @@ const Illustration1 = () => {
   };
 
   return (
-    <div className=" py-12">
-      <div className="flex flex-col items-center justify-center ">
+    <div className=" py-6">
+      <div className="flex flex-col items-center justify-top ">
         <motion.div
           variants={fadeInEffect}
           initial="hidden"
           animate="visible"
-          className="px-16 md:px-0 text-center text-3xl md:text-5xl font-semibold flex flex-col justify-center items-center gap-2 md:gap-6 py-[25vh]"
+          className="px-16 md:px-0 text-center text-3xl md:text-5xl font-semibold flex flex-col justify-center items-center gap-2 md:gap-6 py-16"
         >
           <span>Empowering Communication</span>
           <span>Through Sign Language</span>
@@ -27,7 +27,7 @@ const Illustration1 = () => {
             type="video/mp4"
           />
         </video>{" "} */}
-        <img src={image} className="w-[60%] rounded-3xl" />
+        <img src={"/home.gif"} className="w-[60%] rounded-3xl" />
       </div>
     </div>
   );
