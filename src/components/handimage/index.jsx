@@ -123,10 +123,10 @@ export const Signpass = [
   //   src: G_hand,
   //   alt: "G",
   // },
-  {
-    src: H_hand,
-    alt: "H",
-  },
+  // {
+  //   src: H_hand,
+  //   alt: "H",
+  // },
   {
     src: I_hand,
     alt: "I",
