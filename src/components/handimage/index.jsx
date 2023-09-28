@@ -103,26 +103,26 @@ export const Signpass = [
     src: B_hand,
     alt: "B",
   },
-  // {
-  //   src: C_hand,
-  //   alt: "C",
-  // },
-  // {
-  //   src: D_hand,
-  //   alt: "D",
-  // },
-  // {
-  //   src: E_hand,
-  //   alt: "E",
-  // },
+   {
+     src: C_hand,
+     alt: "C",
+   },
+   {
+     src: D_hand,
+     alt: "D",
+   },
+   {
+     src: E_hand,
+     alt: "E",
+   },
   {
     src: F_hand,
     alt: "F",
   },
-  // {
-  //   src: G_hand,
-  //   alt: "G",
-  // },
+   {
+     src: G_hand,
+     alt: "G",
+   },
   {
     src: H_hand,
     alt: "H",
@@ -131,22 +131,22 @@ export const Signpass = [
     src: I_hand,
     alt: "I",
   },
-  // {
-  //   src: J_hand,
-  //   alt: "J",
-  // },
-  // {
-  //   src: K_hand,
-  //   alt: "K",
-  // },
+   {
+     src: J_hand,
+     alt: "J",
+   },
+   {
+     src: K_hand,
+     alt: "K",
+   },
   {
     src: L_hand,
     alt: "L",
   },
-  // {
-  //   src: M_hand,
-  //   alt: "M",
-  // },
+   {
+     src: M_hand,
+     alt: "M",
+   },
   {
     src: N_hand,
     alt: "N",
@@ -155,14 +155,14 @@ export const Signpass = [
     src: O_hand,
     alt: "O",
   },
-  // {
-  //   src: P_hand,
-  //   alt: "P",
-  // },
-  // {
-  //   src: Q_hand,
-  //   alt: "Q",
-  // },
+   {
+     src: P_hand,
+     alt: "P",
+   },
+   {
+     src: Q_hand,
+     alt: "Q",
+   },
   {
     src: R_hand,
     alt: "R",
@@ -171,34 +171,34 @@ export const Signpass = [
     src: S_hand,
     alt: "S",
   },
-  // {
-  //   src: T_hand,
-  //   alt: "T",
-  // },
+   {
+     src: T_hand,
+     alt: "T",
+   },
   {
     src: U_hand,
     alt: "U",
   },
-  // {
-  //   src: V_hand,
-  //   alt: "V",
-  // },
-  // {
-  //   src: W_hand,
-  //   alt: "W",
-  // },
-  // {
-  //   src: X_hand,
-  //   alt: "X",
-  // },
+   {
+     src: V_hand,
+     alt: "V",
+   },
+   {
+     src: W_hand,
+     alt: "W",
+   },
+   {
+     src: X_hand,
+     alt: "X",
+   },
   {
     src: Y_hand,
     alt: "Y",
   },
-  // {
-  //   src: Z_hand,
-  //   alt: "Z",
-  // },
+   {
+     src: Z_hand,
+     alt: "Z",
+   },
 ]
 export const NumberPass = [
   // {
