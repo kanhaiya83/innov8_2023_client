@@ -44,15 +44,18 @@ const numberSigns= [
   Handsigns.sign_3,
   Handsigns.sign_4,
 ]
+const phrasesSigns = [
+  Handsigns.phrase_ily
+]
 const GestureTrackerWebcam = ({ data }) => {
-  const { signList, onLoad, onSuccess, isNumber } = data;
+  const { signList, onLoad, onSuccess, isNumber, isPhrase } = data;
   console.log(signList);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
   const [playSound] = useSound(bellSound);
   const bellAudio = new Audio("/bell.mp3")
-  let currentSign = 0
+   window.currentSign = 0
   let gamestate = "started";
 
   // let net;
@@ -87,7 +90,7 @@ const GestureTrackerWebcam = ({ data }) => {
       const hand = await net.estimateHands(video);
       if (hand.length > 0) {
         //loading the fingerpose model
-        const GE = new fp.GestureEstimator(isNumber ?numberSigns :letterSigns);
+        const GE = new fp.GestureEstimator(isNumber ?numberSigns :(isPhrase ?phrasesSigns :letterSigns));
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5);
 
@@ -105,13 +108,13 @@ const GestureTrackerWebcam = ({ data }) => {
             Math.max.apply(undefined, confidence),
             estimatedGestures.gestures[maxConfidence].name,
             estimatedGestures.gestures.sort((a,b)=>{return b.confidence - a.confidence}).map(t=>`${t.name}_${Math.round(t.confidence)}`).slice(0,3),
-            signList[currentSign].alt
+            signList[window.currentSign].alt
           );
 
-          if (signList[currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
+          if (signList[window.currentSign].alt == estimatedGestures.gestures[maxConfidence].name) {
             bellAudio.play()
-            currentSign =( currentSign+1) % signList.length 
-            onSuccess(signList[currentSign]);
+            window.currentSign =( window.currentSign+1) % signList.length 
+            onSuccess(signList[window.currentSign]);
             // playSound() 
           }
         }

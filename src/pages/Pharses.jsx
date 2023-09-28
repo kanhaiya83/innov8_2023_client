@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import GestureTrackerWebcam from "../components/GestureTrackerWebcam";
-import { NumberPass } from "../components/handimage";
+import { NumberPass, PhrasesPass } from "../components/handimage";
 import { successToast } from "../utils";
 import Loader from "../components/Loader";
 import { useNavigate } from "react-router-dom";
@@ -12,9 +12,9 @@ function shuffle(a) {
   }
   return a;
 }
-const NumbersPage = () => {
+const PhrasesPage = () => {
   // const [showLoader,setLoader] = useState(true)
-  const shuffledList = shuffle(NumberPass);
+  const shuffledList = shuffle(PhrasesPass);
   console.log(shuffledList[0].alt);
   const navigate = useNavigate();
   const handleSuccess = (data) => {
@@ -86,4 +86,4 @@ const NumbersPage = () => {
   );
 };
 
-export default NumbersPage;
+export default PhrasesPage;
