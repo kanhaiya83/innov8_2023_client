@@ -14,7 +14,7 @@ const Learn = () => {
           <div className="w-full bg-transparent h-[20%] text-2xl pl-2 font-bold">
             Alphabets
           </div>{" "}
-          <Link className="learn-card-button " to="/">
+          <Link className="learn-card-button " to="/learn/alphabets">
             <button className="">Start Now!</button>
           </Link>
         </div>
@@ -23,7 +23,7 @@ const Learn = () => {
           <div className="w-full bg-transparent h-[20%] text-2xl pl-2 font-bold">
             Numbers
           </div>{" "}
-          <Link className="learn-card-button " to="/">
+          <Link className="learn-card-button " to="/learn/numbers">
             <button className="">Start Now!</button>
           </Link>
         </div>
@@ -32,7 +32,7 @@ const Learn = () => {
           <div className="w-full bg-transparent h-[20%] text-2xl pl-2 font-bold">
             Phrases
           </div>{" "}
-          <Link className="learn-card-button " to="/">
+          <Link className="learn-card-button " to="/learn/phrases">
             <button className="">Start Now!</button>
           </Link>
         </div>
