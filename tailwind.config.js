@@ -13,7 +13,8 @@ module.exports = {
         black: "#000000",
         slateGreen: "#183D3D",
         lightTeal: "#5C8374",
-        teal: "#93B1A6"
+        teal: "#93B1A6",
+        bgColor:"#040D12"
       },
     },
   },
