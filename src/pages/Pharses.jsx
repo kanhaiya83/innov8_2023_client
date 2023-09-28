@@ -45,7 +45,7 @@ const PhrasesPage = () => {
           <div className="relative pt-[66%] rounded-2xl overflow-hidden">
             <GestureTrackerWebcam
               data={{
-                isNumber: true,
+                isPhrase : true,
                 signList: shuffledList,
                 onSuccess: handleSuccess,
                 onLoad: () => {
